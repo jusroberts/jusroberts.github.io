@@ -50,7 +50,8 @@
 
 <p>A Raspberry Pi with a USB-attached microphone records 3 seconds of audio, analyzes it, and repeats. </p>
 
-<p><img src="/images/pingpong_sensor_placement.jpg" alt="diagram"></p>
+<p><img src="/images/pingpong_sensor_placement.jpg" alt="diagram">
+<ul><li>Image credit Chip Freeney <a href="http://www.chipfreeney.com">www.chipfreeney.com/</a></li></ul></p>
 
 <p>In order to analyze the sound, I created a <a href="https://github.com/jusroberts/spectrum-analyzer">gem</a> that can be used to break a recording into a set of frequencies using a <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier Transform</a> algorithm called <a href="https://github.com/evan/fftw3">FFTW3</a>. The resultant frequency set is then compared to sample ping pong ball strikes that we gathered previously. If the frequencies are within an acceptable margin of each other, then we consider a hit to have taken place.</p>
 
