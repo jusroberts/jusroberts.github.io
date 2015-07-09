@@ -59,7 +59,7 @@
 
 <p>In order to analyze the sound, I created a <a href="https://github.com/jusroberts/spectrum-analyzer">gem</a> that can be used to break a recording into a set of frequencies using a <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier Transform</a> algorithm called <a href="https://github.com/evan/fftw3">FFTW3</a>. The resultant frequency set is then compared to sample ping pong ball strikes that we gathered previously. If the frequencies are within an acceptable margin of each other, then we consider a hit to have taken place.</p>
 
-<p><img src="www.google.com" alt="picture"></p>
+<p><img src="/images/ping_pong_frequency_graph.png" alt="frequency graph"></p>
 
 <p>Suspected "hits" were recorded in a database, from which a <a href="https://github.com/jusroberts/rails-sound-spy">rails application</a> hosted on the Raspberry Pi displayed the table's in-use status, which was determined by whether or not a sufficient amount of hits occurred in the last minute or so. Everyone on the company network could view and use this information as needed.</p>
 
