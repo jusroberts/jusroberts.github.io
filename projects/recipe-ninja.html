@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Raspberry Spi - Justin Roberts</title>
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="../stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Justin Roberts</h1>
+          <p></p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/jusroberts">jusroberts</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<h4>
+  <a href="/">Home</a>
+</h4>
+<h2>
+<a id="recipe-ninja" class="anchor" href="#recipe-ninja" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recipe Ninja</h2>
+
+<p>A website for the parsing of recipe pages into shopping lists</p>
+<ul>
+  <li><a href="http://www.mygrocery.ninja">Website</a></li>
+  <li><a href="https://github.com/jusroberts/recipe-ninja">Repository</a></li>
+</ul>
+<h3>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works</h3>
+
+<p>
+  When the user inputs a URL to the recipes they want to use, this application retrieves the raw HTML from those sites, and looks for their ingredients.
+</p>
+
+<p><img src="/images/allrecipes.chicken.png" alt="Original Data">
+<ul><li><a href="http://allrecipes.com/recipe/chinese-chicken-fried-rice-ii/">http://allrecipes.com/recipe/chinese-chicken-fried-rice-ii/</a></li></ul></p>
+
+<p>
+  For each link processed, a list of ingredients is created.
+  The ingredients are processed with help from the <a href="https://github.com/iancanderson/hangry">hangry</a> and <a href="https://github.com/iancanderson/ingreedy">ingreedy</a> gems.
+  AFter that, some simple processing occurs to try and normalize ingredient amounts, like converting cups to ounces.
+  Site specific processing also occurs. For instance, FoodNetwork likes to put a comma after an ingredient and tell us what action needs to happen to it; like mincing or chopping.
+</p>
+
+<p><img src="/images/mygrocery.ninja.png" alt="Parsed Data">
+<ul><li><a href="http://mygrocery.ninja/shopping_lists/1">http://mygrocery.ninja/shopping_lists/1</a></li></ul></p>
+
+<p>
+  Once all links have been processed, they are combined into a single list of ingredients.
+  Ingredients that need to be combined have their units converted into base units, added together, and then brought back up into units that make sense.
+</p>
+<p>
+  The resulting shopping list contains links to the original recipes, for reference when cooking, and a newline separated list of ingredients that need to be acquired.
+  This list can be used directly or copied into another program, like Google Keep, to be used as a checklist.
+</p>
+
+</section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-64908153-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
