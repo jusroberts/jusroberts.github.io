@@ -21,12 +21,13 @@
     <div class="wrapper">
 
       <section>
-<h4>
-  <a href="/">Home</a>
-</h4>
-<h1>
-<a id="raspberry-spi" class="anchor" href="#raspberry-spi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Raspberry Spi
-</h1>
+        <div id="title">
+          <h2>Raspberry Spi</h2>
+          <p></p>
+          <hr>
+          <span class="credits left"><a href="/">Home</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
 
 <p>A break room ping-pong sensor</p>
 
@@ -36,14 +37,16 @@
 </ul>
 
 <h3>
-<a id="what-it-does" class="anchor" href="#what-it-does" aria-hidden="true"><span class="octicon octicon-link"></span></a>What it does</h3>
+<a id="what-it-does" class="anchor" href="#what-it-does" aria-hidden="true"><span class="octicon octicon-link"></span></a>What it does
+</h3>
 
 <p>We needed a way to quickly know whether or not someone was playing ping pong in the company break room, so we created a sensor that would listen to the ping pong table, and report to a website it's current status: in-use or available. </p>
 
 <p><img src="/images/spi_dashboard.png" alt="website"></p>
 
 <h3>
-<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works</h3>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works
+</h3>
 
 <p>A Raspberry Pi with a USB-attached microphone records 3 seconds of audio, analyzes it, and repeats. </p>
 
@@ -58,7 +61,8 @@
 <p>Suspected "hits" were recorded in a database, from which a <a href="https://github.com/jusroberts/rails-sound-spy">rails application</a> hosted on the Raspberry Pi displayed the table's in-use status, which was determined by whether or not a sufficient amount of hits occurred in the last minute or so. Everyone on the company network could view and use this information as needed.</p>
 
 <h3>
-<a id="results" class="anchor" href="#results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results</h3>
+<a id="results" class="anchor" href="#results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results
+</h3>
 
 <p>
   The accuracy of the detection algorithm and the auto-updating site enabled this project to be a huge success around the company. A noteable percentage of our coworkers used and relied on this service, which probably saved the company thousands, if not millions of man-hours over the lifetime of the Pi.
