@@ -1,0 +1,32 @@
+.footnote {
+    font-size: .75em;
+}
+
+body {
+    background: #2a2a29;
+    font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #f0e7d5;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.quote {
+    font-size: 1.25em;
+    font-style: italic;
+}
+
+.quote-block {
+    border-radius: .5em;
+    background: #3a3a39;
+    padding: 0 1em;
+}
+.half {
+    width: 49%;
+    display: inline-grid;
+}
