@@ -3,7 +3,7 @@
 }
 
 body {
-    background: #2a2a29;
+    background: #1a1a19;
     font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #f0e7d5;
 }
@@ -18,15 +18,30 @@ body {
 
 .quote {
     font-size: 1.25em;
-    font-style: italic;
+}
+
+.attribution {
+    font-size: 1.1em;
 }
 
 .quote-block {
     border-radius: .5em;
     background: #3a3a39;
+    font-style: italic;
     padding: 0 1em;
+    margin: .5em 0;
 }
 .half {
     width: 49%;
     display: inline-grid;
+}
+.highlight {
+    border-radius: .5em;
+    margin: .5em 0;
+    background: #3a3a39;
+    text-align: center;
+    font-size: 1.1em;
+}
+table {
+    background: #3a3a39;
 }
