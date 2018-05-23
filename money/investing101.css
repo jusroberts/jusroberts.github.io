@@ -34,6 +34,7 @@ body {
 .half {
     width: 49%;
     display: inline-grid;
+    vertical-align: top;
 }
 .highlight {
     border-radius: .5em;
