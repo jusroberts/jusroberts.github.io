@@ -45,3 +45,6 @@ body {
 table {
     background: #3a3a39;
 }
+tr:nth-child(even) {
+    background: #333;
+}
