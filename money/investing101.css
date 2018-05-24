@@ -28,7 +28,7 @@ body {
     border-radius: .5em;
     background: #3a3a39;
     font-style: italic;
-    padding: 0 1em;
+    padding: .5em 1em;
     margin: .5em 0;
 }
 .half {
@@ -48,4 +48,8 @@ table {
 }
 tr:nth-child(even) {
     background: #333;
+}
+.definition-name {
+    margin: 1em 0;
+    font-size: 1.1em;
 }
