@@ -3,9 +3,13 @@
 }
 
 body {
-    background: #1a1a19;
+    background: #282638;
     font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #f0e7d5;
+}
+
+.image-border {
+    border: 4px #8b9378 solid;
 }
 
 .center {
