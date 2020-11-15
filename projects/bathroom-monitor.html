@@ -29,7 +29,7 @@
           <span class="credits right"></span>
         </div>
 <ul>
-  <li><a href="https://github.com/jusroberts/pingpong-web-server">Rails Application</a></li>
+  <li><a href="https://github.com/jusroberts/pingpong-web-server">Source</a></li>
 </ul>
 
 <h3>
@@ -75,16 +75,22 @@
   We went back to our trusty Particle Photon development board and hooked up a couple of magnetic reed switches typically used for door alarm systems.
   When the magnets were close enough to activate, we considered the stall "in use". 
   It helped that the doors we were hooking on to drifted open when not in use.
+  
+  <br>
   <img src="/images/bathroom-monitor/the-device.png" alt="the device">
+  <br>
   <img src="/images/bathroom-monitor/architecture.png" alt="architecture">
 </p>
 
 <p>
   This data was transfered to the rails app where it was stored for historical analysis, and also used for immediate real-time usage information.
   Coworkers could either use the web interface,
+  <br>
   <img src="/images/bathroom-monitor/homescreen.png" alt="bathroom monitor web page">
+  <br>
   or use a hipchat commands "!bathroom status" or "!poo",
   or create their own api-based usage pattern.
+  <br>
   <img src="/images/bathroom-monitor/third-party-integrations.png" alt="bathroom monitor web page">
 </p>
 
@@ -96,12 +102,16 @@
   We presented this to the engineering org as our entry into a hack-a-thon that was being held. 
   We made the following commercial and ended up winning people's choice!
 </p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VC7PLUzrI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VC7PLUzrI" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+style="margin-right: auto;margin-left: auto;display: block;"></iframe>
 
-
+<br>
 <a id="fate" class="anchor" href="#fate" aria-hidden="true"><span class="octicon octicon-link"></span></a><h3>Fate</h3>
 <p>
+  <br>
   <img src="/images/bathroom-monitor/historical-data.png" alt="the thing that got us caught">
+  <br>
   Unfortunately, the historical data ended up being this project's undoing.
   We were able to show days where the occupancy was over 70%, and decided that this should be actionable by the company.
   We posted the (as always with this project, completely anonymous) data to an internal "chatter" (similar to a forum post) to show that something needed to be done to free up bathroom availability.

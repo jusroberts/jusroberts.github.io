@@ -29,7 +29,7 @@
           <span class="credits right"></span>
         </div>
 <ul>
-  <li><a href="https://github.com/jusroberts/pingpong-web-server">Rails Application</a></li>
+  <li><a href="https://github.com/jusroberts/pingpong-web-server">Source</a></li>
 </ul>
 
 <h3>
@@ -62,11 +62,15 @@
 <p>The computer in the room serves as the user's interface for user registration, game creation, viewing scores, and being told when to switch serving teams</p>
 <p>
   When users first arrive in the room, they are prompted with the following screen:
+  <br>
   <img src="/images/pong-server/new-game-screen.png" alt="new game screen">
+  <br>
   From here, users may "badge in" to the system. 
   If the badge is recognized, then the player is added to the game. 
   Otherwise, the player is prompted to create a new user, by entering a Name, Pin, and having a picture taken:
+  <br>
   <img src="/images/pong-server/user-image.png" alt="player's picture">
+  <br>
   Once all players are in, they can choose to start the game, or "Balance the Teams". 
   Balancing the teams will try to make the teams even, skill wise. 
   Behind the scenes, we use the ELO algorithm to do this. 
@@ -74,7 +78,9 @@
 
 <p>
   Once the game is started, this screen will appear:
+  <br>
   <img src="/images/pong-server/play-screen.png" alt="play screen">
+  <br>
   Input from the table will be shown, sounds will play at certain points ("Change Places!"), health will decrement from each side, and eventually there will be a winner.
   From there, a new game can be made from the existing players by clicking a score increment button or the game will time out and go back to the main menu.
 </p>
@@ -83,9 +89,13 @@
 <p>
   For this project, we used heroku because it was free to us. All logic occurs there based on the inputs from the table and client-computer.
   We keep track of player rankings from historical games, and can determine handicaps per game. Ranking data can be viewed from a client:
+  <br>
   <img src="/images/pong-server/leaderboard.png" alt="leaderboard">
+  <br>
   and can be drilled down by player:
+  <br>
   <img src="/images/pong-server/user-profile.png" alt="player data">
+  <br>
   and even further for actual game data if desired (not shown).
 </p>
 <p>
