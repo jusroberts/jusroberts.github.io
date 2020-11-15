@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>The Pardot Ping Pong Service</title>
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="../stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>The Pardot Ping Pong Service</h1>
+          <p></p>
+          <hr>
+          <span class="credits left"><a href="/">Home</a></span>
+          <span class="credits right"></span>
+        </div>
+
+<p>A break room ping-pong interface</p>
+
+<ul>
+  <li><a href="https://github.com/jusroberts/pingpong-web-server">Rails Application</a></li>
+</ul>
+
+<h3>
+<a id="what-it-does" class="anchor" href="#what-it-does" aria-hidden="true"><span class="octicon octicon-link"></span></a>What it does
+</h3>
+
+<p>We had a well used ping pong system, but needed to know when it was in use. Additionally, it had it's own room, so we could create an entire experience around playing.</p>
+
+<h3>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works
+</h3>
+
+
+<p>In the room, we have several components:</p>
+<ul>
+  <li>A Ping Pong table with buttons integrated</li>
+  <li>A computer with monitor, speakers, and an RFID badge reader</li>
+</ul>
+<p>External to the room, we are running the application itself on heroku</p>
+
+<h4>The Table</h4>
+<p>We have attached 3 buttons on each side of the table. 2 on the sides control each team's score, while the one in the center allows for taunting sound clips to be played.</p>
+<p>
+  These 6 buttons are then attached to a Particle Photon, which is a development board with integrated wifi and allows for over-the-air code updates.
+  The Photon is programmed similarly to an Arduino. 
+  While the taunt button is just a link to an API callout, the increment/decrement button is a bit more complex. For quick taps, we send an incrememt to the specified team, while for longer holds (~1 second) we send a decrement.
+</p>
+
+<h4>The Computer in the Room</h4>
+<p>The computer in the room serves as the user's interface for user registration, game creation, viewing scores, and being told when to switch serving teams</p>
+<p>
+  When users first arrive in the room, they are prompted with the following screen:
+  <img src="/images/pong-server/new-game-screen.png" alt="new game screen">
+  From here, users may "badge in" to the system. 
+  If the badge is recognized, then the player is added to the game. 
+  Otherwise, the player is prompted to create a new user, by entering a Name, Pin, and having a picture taken:
+  <img src="/images/pong-server/user-image.png" alt="player's picture">
+  Once all players are in, they can choose to start the game, or "Balance the Teams". 
+  Balancing the teams will try to make the teams even, skill wise. 
+  Behind the scenes, we use the ELO algorithm to do this. 
+</p>
+
+<p>
+  Once the game is started, this screen will appear:
+  <img src="/images/pong-server/play-screen.png" alt="play screen">
+  Input from the table will be shown, sounds will play at certain points ("Change Places!"), health will decrement from each side, and eventually there will be a winner.
+  From there, a new game can be made from the existing players by clicking a score increment button or the game will time out and go back to the main menu.
+</p>
+
+<h4>The Server</h4>
+<p>
+  For this project, we used heroku because it was free to us. All logic occurs there based on the inputs from the table and client-computer.
+  We keep track of player rankings from historical games, and can determine handicaps per game. Ranking data can be viewed from a client:
+  <img src="/images/pong-server/leaderboard.png" alt="leaderboard">
+  and can be drilled down by player:
+  <img src="/images/pong-server/user-profile.png" alt="player data">
+  and even further for actual game data if desired (not shown).
+</p>
+<p>
+  A relatively new feature is the ability to have "seasons" of play. 
+  These allow us to, on a regular basis, reset the leaderboard while keeping the past data available for nostalgia.
+  The biggest advantage to this is to make it so the players no longer with us aren't in the number 1 slot.
+</p>
+
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a><h3>Credits</h3>
+Please see https://github.com/jusroberts/pingpong-web-server/graphs/contributors for a full list of contributors and their contributions.
+</section>
+
+    </div>
+  </body>
+</html>

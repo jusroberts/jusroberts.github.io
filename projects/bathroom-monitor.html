@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>The Bathroom Monitor</title>
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="../stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>The Pardot Bathroom Stall availability monitor</h1>
+          <p></p>
+          <hr>
+          <span class="credits left"><a href="/">Home</a></span>
+          <span class="credits right"></span>
+        </div>
+
+<p>A stall availability monitor</p>
+
+<ul>
+  <li><a href="https://github.com/jusroberts/pingpong-web-server">Rails Application</a></li>
+</ul>
+
+<h3>
+<a id="but-why" class="anchor" href="#but-why" aria-hidden="true"><span class="octicon octicon-link"></span></a>But why?
+</h3>
+
+<p>
+  The number of men on the top floor of the Pardot Office had reached a critical point in 2016. 
+  With two bathroom stalls for over 100 men, there were several spans of time in which multiple floors needed to be traversed in order to find a stall to do ones buisiness in. 
+</p>
+<p>
+  With the Ping Pong service in place, we decided to tackle this next great infrastructure project.
+</p>
+
+
+<h3>
+  <a id="what-it-does" class="anchor" href="#what-it-does" aria-hidden="true"><span class="octicon octicon-link"></span></a>What it does
+</h3>
+
+<p>
+  This is a service that relays real-time information about whether or not someone is using a bathroom stall. 
+  At a glance (or hipchat/slack command), coworkers know if now's a good time to let nature call, or if they should wait a minute.
+</p>
+
+<h3>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works
+</h3>
+
+<p>
+  This is an add-on service for the pingpong web server. 
+  We chose to have them be on the same server because we were lazy and didn't want to spin up another heroku instance.
+</p>
+
+<p>
+  Initial brainstorms for how to check for bathroom occupancy included fancy things like lasers, sonar, and even some sort of spring switch mechanism on the stall doors.
+
+  In the end, here's what we went with:
+</p>
+
+<p>
+  We went back to our trusty Particle Photon development board and hooked up a couple of magnetic reed switches typically used for door alarm systems.
+  When the magnets were close enough to activate, we considered the stall "in use". 
+  It helped that the doors we were hooking on to drifted open when not in use.
+</p>
+
+<p>
+  This data was transfered to the rails app where it was stored for historical analysis, and also used for immediate real-time usage information.
+  Coworkers could either use the web interface,
+  <img src="/images/bathroom-monitor/homescreen.png" alt="bathroom monitor web page">
+  or use a hipchat commands "!bathroom status" or "!poo",
+  or create their own api-based usage pattern.
+  <img src="/images/bathroom-monitor/homescreen.png" alt="bathroom monitor web page">
+</p>
+
+
+<h3>
+  <a id="our-commercial" class="anchor" href="#our-commercial" aria-hidden="true"><span class="octicon octicon-link"></span></a>Our Commercial
+</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VC7PLUzrI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<a id="fate" class="anchor" href="#fate" aria-hidden="true"><span class="octicon octicon-link"></span></a><h3>Fate</h3>
+<p>
+  Unfortunately, the historical data ended up being this project's undoing.
+  We were able to show days where the occupancy was over 70%, and decided that this should be actionable by the company.
+  We posted the (as always with this project, completely anonymous) data to an internal "chatter" (similar to a forum post) to show that something needed to be done to free up bathroom availability.
+</p>
+
+<p>
+  Something was indeed done, as a couple of hours after that post was made, the HR department sent representatives to my desk to have the system taken down.
+  As it turns out, they didn't like the perception that the company was monitoring bathroom usage.
+  Appeals went no where, and the project was halted.
+</p>
+
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a><h3>Credits</h3>
+Please see https://github.com/jusroberts/pingpong-web-server/graphs/contributors for a full list of contributors and their contributions.
+</section>
+
+    </div>
+  </body>
+</html>
